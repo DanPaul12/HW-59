@@ -19,3 +19,8 @@ def schedule_tasks(arr):
 zoom = schedule_tasks(tasks)
 for task in zoom:
     print(task)
+
+#time & space complexity: for smaller cases this should work efficiently, but for larger 
+#or deeply nested data sets, recursion could be more system intensive than iterative traversal
+#using a stack or queue. If priorities are in a discrete range, a bucket sort might be
+#more efficient
