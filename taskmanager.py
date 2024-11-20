@@ -8,12 +8,14 @@ newtasks = []
 
 def schedule_tasks(arr):
     for task in arr:
-        if isinstance(task['subtasks'], list):
+        newtasks.append(task)
+        if isinstance(task['subtasks'], list) and task['subtasks']:
             schedule_tasks(task['subtasks'])
-        elif isinstance(task, dict):
-            newtasks.append(task)
+        
     x = sorted(newtasks, key=lambda x: x.get('priority'))
-    for y in x:
-        print(y)
+    return x
 
-schedule_tasks(tasks)
+
+zoom = schedule_tasks(tasks)
+for task in zoom:
+    print(task)
